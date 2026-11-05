@@ -24,7 +24,7 @@ function DailyWeatherApp() {
     const handleClick = () => {
         tempArray.length = 0;
         imgArray.length = 0;
-        const API_ENDPOINT = `http://api.weatherapi.com/v1/forecast.json?key=01b4656903724841b8b92404231402&q=${inputValue}&aqi=en`;
+        const API_ENDPOINT = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${inputValue}&aqi=en`;
         fetch(API_ENDPOINT)
             .then((response) => response.json())
             .then((loggedData) => {
